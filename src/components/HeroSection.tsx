@@ -1,8 +1,11 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -37,6 +40,7 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button 
                 size="lg"
+                onClick={() => navigate('/get-started')}
                 className="bg-gradient-to-r from-cloudryze-blue to-cloudryze-purple hover:from-cloudryze-blue-dark hover:to-cloudryze-purple-dark text-white px-8 py-4 text-lg font-semibold rounded-lg transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
               >
                 Get Started Free
@@ -45,7 +49,7 @@ const HeroSection = () => {
                 variant="outline" 
                 size="lg"
                 onClick={() => scrollToSection('features')}
-                className="border-2 border-cloudryze-blue text-cloudryze-blue hover:bg-cloudryze-blue hover:text-white px-8 py-4 text-lg font-semibold rounded-lg transform hover:scale-105 transition-all duration-200"
+                className="border-2 border-cloudryze-blue text-cloudryze-blue hover:bg-cloudryze-blue hover:text-white px-8 py-4 text-lg font-semibold rounded-lg transform hover:scale-105 transition-all duration-200 shadow-md hover:shadow-lg"
               >
                 Learn More
               </Button>

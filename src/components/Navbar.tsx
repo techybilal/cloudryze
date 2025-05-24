@@ -1,10 +1,12 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +25,10 @@ const Navbar = () => {
     setIsMobileMenuOpen(false);
   };
 
+  const handleLogoClick = () => {
+    navigate('/');
+  };
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
@@ -31,9 +37,9 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-cloudryze-blue to-cloudryze-purple bg-clip-text text-transparent">
+            <button onClick={handleLogoClick} className="text-2xl font-bold bg-gradient-to-r from-cloudryze-blue to-cloudryze-purple bg-clip-text text-transparent">
               Cloudryze
-            </h1>
+            </button>
           </div>
 
           {/* Desktop Navigation */}
@@ -74,10 +80,17 @@ const Navbar = () => {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" className="text-gray-700 hover:text-cloudryze-blue">
+            <Button 
+              variant="ghost" 
+              onClick={() => navigate('/sign-in')}
+              className="text-gray-700 hover:text-cloudryze-blue"
+            >
               Sign In
             </Button>
-            <Button className="bg-gradient-to-r from-cloudryze-blue to-cloudryze-purple hover:from-cloudryze-blue-dark hover:to-cloudryze-purple-dark text-white px-6 py-2 rounded-lg transform hover:scale-105 transition-all duration-200">
+            <Button 
+              onClick={() => navigate('/get-started')}
+              className="bg-gradient-to-r from-cloudryze-blue to-cloudryze-purple hover:from-cloudryze-blue-dark hover:to-cloudryze-purple-dark text-white px-6 py-2 rounded-lg transform hover:scale-105 transition-all duration-200"
+            >
               Get Started
             </Button>
           </div>
@@ -130,10 +143,17 @@ const Navbar = () => {
                 FAQ
               </button>
               <div className="pt-4 border-t border-gray-200">
-                <Button variant="ghost" className="w-full mb-2 text-gray-700 hover:text-cloudryze-blue">
+                <Button 
+                  variant="ghost" 
+                  onClick={() => navigate('/sign-in')}
+                  className="w-full mb-2 text-gray-700 hover:text-cloudryze-blue"
+                >
                   Sign In
                 </Button>
-                <Button className="w-full bg-gradient-to-r from-cloudryze-blue to-cloudryze-purple text-white">
+                <Button 
+                  onClick={() => navigate('/get-started')}
+                  className="w-full bg-gradient-to-r from-cloudryze-blue to-cloudryze-purple text-white"
+                >
                   Get Started
                 </Button>
               </div>
