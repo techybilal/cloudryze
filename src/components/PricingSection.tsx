@@ -29,6 +29,19 @@ const PricingSection = () => {
     return () => observer.disconnect();
   }, []);
 
+  const handleGetStarted = () => {
+    window.location.href = '/auth';
+  };
+
+  const handleUpgrade = (plan: 'pro' | 'business') => {
+    const urls = {
+      pro: 'https://buy.stripe.com/test_aFaaEX6NmemR6FC8cOg7e00',
+      business: 'https://buy.stripe.com/test_7sY8wP8VufqVe84fFgg7e01'
+    };
+    
+    window.open(urls[plan], '_blank');
+  };
+
   const plans = [
     {
       name: "Free",
@@ -44,7 +57,8 @@ const PricingSection = () => {
       ],
       cta: "Get Started",
       popular: false,
-      color: "from-gray-500 to-gray-600"
+      color: "from-gray-500 to-gray-600",
+      action: handleGetStarted
     },
     {
       name: "Pro",
@@ -62,7 +76,8 @@ const PricingSection = () => {
       ],
       cta: "Start Pro Trial",
       popular: true,
-      color: "from-cloudryze-blue to-cloudryze-purple"
+      color: "from-cloudryze-blue to-cloudryze-purple",
+      action: () => handleUpgrade('pro')
     },
     {
       name: "Business",
@@ -81,7 +96,8 @@ const PricingSection = () => {
       ],
       cta: "Contact Sales",
       popular: false,
-      color: "from-cloudryze-purple to-cloudryze-cyan"
+      color: "from-cloudryze-purple to-cloudryze-cyan",
+      action: () => handleUpgrade('business')
     }
   ];
 
@@ -122,7 +138,10 @@ const PricingSection = () => {
                       <span className="text-gray-600 ml-2">/{plan.period}</span>
                     </div>
 
-                    <Button className={`w-full bg-gradient-to-r ${plan.color} hover:shadow-lg text-white py-3 rounded-lg transform hover:scale-105 transition-all duration-200`}>
+                    <Button 
+                      onClick={plan.action}
+                      className={`w-full bg-gradient-to-r ${plan.color} hover:shadow-lg text-white py-3 rounded-lg transform hover:scale-105 transition-all duration-200`}
+                    >
                       {plan.cta}
                     </Button>
                   </div>
