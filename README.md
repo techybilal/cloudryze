@@ -47,5 +47,5 @@ npm install
 npm run dev
 ```
 
-🚀 Thanks for scrolling!  
-💡 If this project inspired you or helped you out, consider dropping a ⭐ on GitHub! 
+**🚀 Thanks for scrolling!  
+💡 If this project inspired you or helped you out, consider dropping a ⭐ on GitHub!**
