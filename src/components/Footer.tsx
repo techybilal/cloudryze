@@ -139,7 +139,7 @@ const Footer = () => {
             © {currentYear} Cloudryze. All rights reserved.
           </div>
           <div className="mt-4 md:mt-0 text-gray-400 text-sm">
-            Made with ❤️ for teams worldwide
+            ✨ Creative Vision by Bilalwaris ✨
           </div>
         </div>
       </div>

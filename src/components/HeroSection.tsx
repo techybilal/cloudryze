@@ -45,14 +45,13 @@ const HeroSection = () => {
               >
                 Get Started Free
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                onClick={() => scrollToSection('features')}
-                className="border-2 border-cloudryze-blue text-cloudryze-blue hover:bg-cloudryze-blue hover:text-white px-8 py-4 text-lg font-semibold rounded-lg transform hover:scale-105 transition-all duration-200 shadow-md hover:shadow-lg"
-              >
-                Learn More
-              </Button>
+<Button 
+  size="lg"
+  onClick={() => scrollToSection('features')}
+  className="bg-white text-cloudryze-blue border-2 border-cloudryze-blue hover:bg-cloudryze-blue hover:text-white px-8 py-4 text-lg font-semibold rounded-lg transform hover:scale-105 transition-all duration-200 shadow-md hover:shadow-lg"
+>
+  Learn More
+</Button>
             </div>
 
             {/* Stats */}

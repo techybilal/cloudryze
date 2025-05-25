@@ -1,17 +1,16 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 255 255 255;
+    --background: 0 100 100;
     --foreground: 15 23 42;
 
-    --card: 255 255 255;
+    --card: 0 100 100;
     --card-foreground: 15 23 42;
 
-    --popover: 255 255 255;
+    --popover: 0 100 100;
     --popover-foreground: 15 23 42;
 
     --primary: 59 130 246;
@@ -82,9 +81,7 @@
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
@@ -95,6 +92,12 @@
 
   html {
     scroll-behavior: smooth;
+  }
+
+  input:focus,
+  textarea:focus,
+  select:focus {
+    @apply outline-none ring-0 shadow-md shadow-black;
   }
 }
 

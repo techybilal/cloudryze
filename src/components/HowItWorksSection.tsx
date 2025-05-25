@@ -77,10 +77,7 @@ const HowItWorksSection = () => {
           {steps.map((step, index) => (
             <div key={index} className="animate-on-scroll relative">
               {/* Connection Line */}
-              {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-16 left-full w-full h-0.5 bg-gradient-to-r from-cloudryze-blue to-cloudryze-purple transform translate-x-6 z-0"></div>
-              )}
-
+              
               <div className="relative z-10 text-center lg:text-left">
                 {/* Step Number */}
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-cloudryze-blue to-cloudryze-purple text-white font-bold text-xl rounded-full mb-6 mx-auto lg:mx-0">

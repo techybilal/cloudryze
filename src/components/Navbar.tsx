@@ -83,7 +83,7 @@ const Navbar = () => {
             <Button 
               variant="ghost" 
               onClick={() => navigate('/sign-in')}
-              className="text-gray-700 hover:text-cloudryze-blue"
+              className="text-gray-700 hover:bg-cloudryze-blue hover:text-white"
             >
               Sign In
             </Button>

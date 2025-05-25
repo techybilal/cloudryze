@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -40,7 +39,6 @@ const AuthForm: React.FC<AuthFormProps> = ({ mode, onToggle }) => {
             title: "Account created successfully!",
             description: "Please check your email to verify your account.",
           });
-          // Redirect to sign in page after successful signup
           window.location.href = '/sign-in';
         }
       } else {
@@ -56,7 +54,6 @@ const AuthForm: React.FC<AuthFormProps> = ({ mode, onToggle }) => {
             title: "Welcome back!",
             description: "You have successfully signed in.",
           });
-          // Redirect to dashboard after successful sign in
           window.location.href = '/dashboard';
         }
       }
@@ -82,10 +79,11 @@ const AuthForm: React.FC<AuthFormProps> = ({ mode, onToggle }) => {
             onChange={(e) => setFullName(e.target.value)}
             placeholder="Enter your full name"
             required
+            className="bg-white text-gray-900 placeholder-gray-400 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:shadow-md focus:shadow-black hover:shadow hover:shadow-black"
           />
         </div>
       )}
-      
+
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
         <Input
@@ -94,9 +92,10 @@ const AuthForm: React.FC<AuthFormProps> = ({ mode, onToggle }) => {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter your email"
           required
+          className="bg-white text-gray-900 placeholder-gray-400 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:shadow-md focus:shadow-black hover:shadow hover:shadow-black"
         />
       </div>
-      
+
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-2">Password</label>
         <Input
@@ -105,9 +104,20 @@ const AuthForm: React.FC<AuthFormProps> = ({ mode, onToggle }) => {
           onChange={(e) => setPassword(e.target.value)}
           placeholder={mode === 'signup' ? 'Create a password' : 'Enter your password'}
           required
+          className="bg-white text-gray-900 placeholder-gray-400 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:shadow-md focus:shadow-black hover:shadow hover:shadow-black"
         />
       </div>
-      
+
+      {/* New toggle button */}
+      <Button
+        type="button"
+        onClick={onToggle}
+        variant="link"
+        className="text-cloudryze-blue hover:underline mb-4 px-0 py-0"
+      >
+        {mode === 'signup' ? 'Go to Sign In' : 'Go to Sign Up'}
+      </Button>
+
       <Button
         type="submit"
         disabled={loading}
@@ -115,7 +125,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ mode, onToggle }) => {
       >
         {loading ? 'Please wait...' : mode === 'signup' ? 'Create Account' : 'Sign In'}
       </Button>
-      
+
       <p className="text-center text-sm text-gray-600 mt-6">
         {mode === 'signup' ? 'Already have an account?' : "Don't have an account?"}{' '}
         <button
