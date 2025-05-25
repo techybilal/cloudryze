@@ -31,6 +31,21 @@ A stunning, futuristic SaaS landing page built with **React.js** and **Tailwind 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/techybilal/cloudryze-horizon-web.git
-cd cloudryze-horizon-web
+git clone https://github.com/techybilal/cloudryze.git
+cd cloudryze
+```
 
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Start the development server
+
+```bash
+npm run dev
+```
+
+🚀 Thanks for scrolling!  
+💡 If this project inspired you or helped you out, consider dropping a ⭐ on GitHub! 
