@@ -1,6 +1,6 @@
 # 🌐 Cloudryze
 
-A stunning, futuristic SaaS landing page built with **React.js** and **Tailwind CSS** — designed to showcase SaaS products or startups with style, responsiveness, and full functionality.
+A stunning, futuristic SaaS landing page built with **React.js** and **Tailwind CSS** — a modern file-sharing and cloud backup platform designed for both individuals and businesses.
 
 [🌍 Live Demo](https://cloudryze.vercel.app)
 
