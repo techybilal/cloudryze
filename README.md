@@ -1,4 +1,4 @@
-# 🌐 Cloudryze Horizon
+# 🌐 Cloudryze
 
 A stunning, futuristic SaaS landing page built with **React.js** and **Tailwind CSS** — designed to showcase SaaS products or startups with style, responsiveness, and full functionality.
 
